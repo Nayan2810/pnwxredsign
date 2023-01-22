@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import {  Route, Routes } from 'react-router-dom';
+import React, { Component } from 'react';
+import "./index.css";
+import Navbar from './Components/Navbar'
+import Footer from './Components/Footer';
+import About from './Components/About';
+import Contact from './Components/Contact';
+import Resume from'./Components/Resume';
+import Project from'./Components/Project';
+import Home from './Components/Home';
+// import ReactBootstrapCarousel from "react-bootstrap-carousel";
+import "bootstrap/dist/css/bootstrap.css";
+import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
 
-function App() {
+
+
+class App extends Component  {render(){
+    
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+   <> <Navbar /> 
+   
+      <Routes>
+          <Route path="/home" element={<Home />}></Route>
+          <Route path="/about" element={<About />}></Route>
+          <Route path='/cont' element={<Contact />}></Route>
+          <Route path='/resume' element={<Resume/>}></Route>
+          <Route path='/project' element={<Project/>}></Route>
+      </Routes>
+    {/* <Footer />  */}
+        
 
+   </>
+     
+    
+  );
+  
+  
+ 
+}}
 export default App;
